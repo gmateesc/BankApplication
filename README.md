@@ -3,9 +3,21 @@
 Bank application with A REST API
 
 
+1. [Install the web application](#install)
+   1. [Update pip](#update_pip)
+   2. [Install dependencies for Flask application](#install_deps)
 
-## Update pip
 
+2. [Start the web application](#start)
+
+
+
+<a name="install" id="install"></a>
+## Install the web application
+
+
+<a name="update_pip" id="update_pip"></a>
+### Update pip
 
 Run
 ```bash
@@ -22,7 +34,9 @@ then check
 
 
 
-## Install dependencies for Flask application
+
+<a name="install_deps" id="install_deps"></a>
+### Install dependencies for Flask application
 
 
 Run
@@ -43,8 +57,10 @@ Run
 
 
 
-## Start the application
 
+
+<a name="start" id="start"></a>
+## Start the web application
 
 
 Use this start script:
