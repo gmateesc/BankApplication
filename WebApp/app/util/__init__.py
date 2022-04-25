@@ -1,7 +1,14 @@
 from persistence import load_store
 
 
-seq_number = 1
+
+def seq_number():
+    seq_number.counter += 1
+    return seq_number.counter
+
+seq_number.counter = 0
+
+
 
 #
 # Check that the JSON payload observes the schema
@@ -38,7 +45,7 @@ def request_check(account):
 
 
     # Generate new account ID
-    account['id'] = str(seq_number + 1)
+    account['id'] = str(seq_number())
 
 
 #
@@ -48,7 +55,6 @@ def request_check(account):
 def save_account(config, accounts, account ):
 
     # If the account is in cache, remove it from cache
-    #id = str(account['id'])
     id = account['id']    
     old_account = list(filter( lambda e: e['id']==id, accounts ))
     if len(old_account) != 0:
