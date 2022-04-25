@@ -191,7 +191,7 @@ Run the start script:
 ### Create a bank account
 
 
-Define the REST API pyaload in a file
+Define the REST API payload in a file
 ```bash 
 
   $ cd BankApplication/WebApp
