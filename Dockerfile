@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-WORKDIR /tmp/Abraxas
+WORKDIR /tmp/Banking
 COPY WebApp .
 
 RUN apt-get update  -y && \
@@ -10,5 +10,5 @@ RUN apt-get update  -y && \
 ENV DEBUG=True
 EXPOSE 5000
 
-CMD [ "bash", "-c", "cd /tmp/Abraxas && ./start.sh" ]
+CMD [ "bash", "-c", "cd /tmp/Banking && ./start.sh" ]
 
