@@ -24,16 +24,16 @@ accounts = [ ]
 # Associate URI /bank/api/v1/accounts and method GET 
 # with the function get_accounts
 #
-@app.route('/abraxas/api/v1/accounts', methods=['GET'])
+@app.route('/banking/api/v1/accounts', methods=['GET'])
 def get_accounts():
     return jsonify({'accounts': accounts})
 
 
 #
-# Associate URI /abraxas/api/v1/account/<account_id> and method GET 
+# Associate URI /banking/api/v1/account/<account_id> and method GET 
 # with the function get_account
 #
-@app.route('/abraxas/api/v1/accounts/<account_id>', methods=['GET'])
+@app.route('/banking/api/v1/accounts/<account_id>', methods=['GET'])
 def get_account(account_id):
 
     # <account_id> from URI is translated to thr account_id param 
@@ -48,13 +48,13 @@ def get_account(account_id):
 
 
 #
-# Associate URI /abraxas/api/v1/accounts and method POST
+# Associate URI /banking/api/v1/accounts and method POST
 # with the function create_account
 #
-@app.route('/abraxas/api/v1/accounts', methods=['POST'])
+@app.route('/banking/api/v1/accounts', methods=['POST'])
 def create_account():
 
-    print("POST /abraxas/api/v1/account")
+    print("POST /banking/api/v1/account")
 
     if not request.is_json:
         abort(400)
@@ -83,10 +83,10 @@ def create_account():
 
 
 #
-# Associate URI /abraxas/api/v1/accounts/<account_id> and method DELETE
+# Associate URI /banking/api/v1/accounts/<account_id> and method DELETE
 # with the function delete_account
 #
-@app.route('/abraxas/api/v1/accounts/<int:account_id>', methods=['DELETE'])
+@app.route('/banking/api/v1/accounts/<int:account_id>', methods=['DELETE'])
 def delete_account(account_id):
     account = [account for account in accounts if account['id'] == account_id]
     if len(account) == 0:

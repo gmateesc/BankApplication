@@ -82,10 +82,10 @@ Use this start script:
   $ cd BankApplication/WebApp
 
   $ more start.sh 
-  mkdir -p /tmp/Abraxas/accounts/
+  mkdir -p /tmp/Banking/accounts/
 
   cd app
-  export FLASK_APP=abraxas_bank
+  export FLASK_APP=banking_bank
 
   python3 ${FLASK_APP}.py
 ```
@@ -97,7 +97,7 @@ Run the start script:
   $ cd BankApplication/WebApp
 
   $ ./start.sh
-   * Serving Flask app 'abraxas_bank' (lazy loading)
+   * Serving Flask app 'banking_bank' (lazy loading)
    * Environment: production
      WARNING: This is a development server. Do not use it in a production deployment.
      Use a production WSGI server instead.
@@ -124,7 +124,7 @@ Run the start script:
   $ more Dockerfile 
   FROM ubuntu:20.04
 
-  WORKDIR /tmp/Abraxas
+  WORKDIR /tmp/Banking
   COPY BankApplication .
 
   RUN apt-get update  -y && \
@@ -134,7 +134,7 @@ Run the start script:
   ENV DEBUG=True
   EXPOSE 5000
 
-  CMD [ "bash", "-c", "cd /tmp/Abraxas && ./start.sh" ]
+  CMD [ "bash", "-c", "cd /tmp/Banking && ./start.sh" ]
 ```
 
 
@@ -173,7 +173,7 @@ Run the start script:
 
   $ docker ps
   CONTAINER ID   IMAGE   COMMAND                  CREATED         STATUS        PORTS                    NAMES
-  33ae2a6c3e81   app     "bash -c 'cd /tmp/Ab…"   5 seconds ago   Up 3 seconds  0.0.0.0:5000->5000/tcp   serene_bouman
+  33ae2a6c3e81   app     "bash -c 'cd /tmp/Ba…"   5 seconds ago   Up 3 seconds  0.0.0.0:5000->5000/tcp   serene_bouman
 ```
 
 
@@ -212,7 +212,7 @@ Send request to the API
   $ curl -sS \
                -X POST -d @payload.json  \
                -H 'Content-Type: application/json'  \
-	       http://127.0.0.1:5000/abraxas/api/v1/accounts
+	       http://127.0.0.1:5000/banking/api/v1/accounts
   {
     "currency": "", 
     "customer_id": 3399, 
@@ -233,7 +233,7 @@ Send request to the API
 
 Get all accounts
 ```bash
-  $ curl -sS    -H 'Content-Type: application/json'  http://127.0.0.1:8888/abraxas/api/v1/accounts
+  $ curl -sS    -H 'Content-Type: application/json'  http://127.0.0.1:8888/banking/api/v1/accounts
   {
     "accounts": [
       {
@@ -251,7 +251,7 @@ Get all accounts
 
 Get a specific account
 ```bash
-  $ curl -sS  -H 'Content-Type: application/json'  http://127.0.0.1:5000/abraxas/api/v1/accounts/2
+  $ curl -sS  -H 'Content-Type: application/json'  http://127.0.0.1:5000/banking/api/v1/accounts/2
   {
     "accounts": [
       {
