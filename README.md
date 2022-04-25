@@ -182,7 +182,6 @@ Run the start script:
 
 
 
-
 <a name="access_api" id="access_api"></a>
 ## Use the web application
 
@@ -191,7 +190,7 @@ Run the start script:
 ### Create a bank account
 
 
-Define the REST API payload in a file
+Define the payload of the REST API request in a file
 ```bash 
 
   $ cd BankApplication/WebApp
