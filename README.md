@@ -85,7 +85,7 @@ Use this start script:
   mkdir -p /tmp/Banking/accounts/
 
   cd app
-  export FLASK_APP=banking_bank
+  export FLASK_APP=bank_app
 
   python3 ${FLASK_APP}.py
 ```
@@ -97,7 +97,7 @@ Run the start script:
   $ cd BankApplication/WebApp
 
   $ ./start.sh
-   * Serving Flask app 'banking_bank' (lazy loading)
+   * Serving Flask app 'bank_app' (lazy loading)
    * Environment: production
      WARNING: This is a development server. Do not use it in a production deployment.
      Use a production WSGI server instead.
@@ -233,7 +233,7 @@ Send request to the API
 
 Get all accounts
 ```bash
-  $ curl -sS    -H 'Content-Type: application/json'  http://127.0.0.1:8888/banking/api/v1/accounts
+  $ curl -sS    -H 'Content-Type: application/json'  http://127.0.0.1:5000/banking/api/v1/accounts
   {
     "accounts": [
       {
