@@ -11,6 +11,19 @@ Bank application with A REST API
 2. [Start the web application](#start)
 
 
+3. [Build the Docker image](#build_image)
+   1. [Create the Dockerfile](#dockerfile)
+   2. [Build the docker image](#image)
+   3. [Run the web application as a container](#run_image)
+
+
+
+4. [Use the web application](#access_api)
+   1. [Create a bank account](#create_account)
+   2. [Get the bank accounts](#get_account)
+
+
+
 
 <a name="install" id="install"></a>
 ## Install the web application
@@ -63,6 +76,7 @@ Run
 ## Start the web application
 
 
+
 Use this start script:
 ```
   $ cd BankApplication/WebApp
@@ -96,9 +110,12 @@ Run the start script:
 
 
 
+
+<a name="build_image" id="build_image"></a>
 ## Build the Docker image
 
 
+<a name="dockerfile" id="dockerfile"></a>
 ### Create the Dockerfile
 
 ```bash
@@ -123,7 +140,7 @@ Run the start script:
 
 
 
-
+<a name="image" id="image"></a>
 ### Build the docker image
 
 ```bash
@@ -143,6 +160,9 @@ Run the start script:
 
 
 
+
+
+<a name="run_image" id="run_image"></a>
 ### Run the web application as a container
 
 
@@ -159,10 +179,16 @@ Run the start script:
 
 
 
+
+
+
+
+<a name="access_api" id="access_api"></a>
 ## Use the web application
 
 
-### Create an account
+<a name="create_account" id="create_account"></a>
+### Create a bank account
 
 
 Define the REST API pyaload in a file
@@ -201,8 +227,9 @@ Send request to the API
 
 
 
-### Get the accounts
 
+<a name="get_account" id="get_account"></a>
+### Get the bank accounts
 
 
 Get all accounts
